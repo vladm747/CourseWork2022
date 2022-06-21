@@ -1,0 +1,40 @@
+﻿@model SoftwareProductTesting.Models.Message
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Message</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SenderId" class="control-label"></label>
+                <input asp-for="SenderId" class ="form-control" asp-items="ViewBag.SenderId">
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiverId" class="control-label"></label>
+                <input asp-for="ReceiverId" class ="form-control" asp-items="ViewBag.ReceiverId">
+            </div>
+            <div class="form-group">
+                <label asp-for="CommentContentId" class="control-label"></label>
+                <input asp-for="CommentContentId" class ="form-control" asp-items="ViewBag.CommentContentId">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
